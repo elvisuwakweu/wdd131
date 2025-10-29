@@ -1,0 +1,131 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 2.1rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    max-width: 1100px;
+    background-color: #003366;
+    color: white;
+    text-align: center;
+}
+
+header h1 {
+    font-weight: 600;
+    margin: 0;
+    font-size: 1.5rem;
+    padding: 1.0rem;
+}
+
+header .highlight {
+    color: #ffcc00;
+}
+
+nav {
+    max-width: 1100px;
+    background-color: #333;
+    padding: 0.5em 0;
+    display: flex;
+    justify-content: center;
+    gap: 9.1em;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+header,
+main,
+footer {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding:0rem;
+}
+
+nav a:hover {
+    color: #ffcc00;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5em;
+    max-width: 1100px;
+    margin: 2em auto;
+    padding: 0 1em;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1.5em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.card h2 {
+    background-color: #003366;
+    color: white;
+    padding: 0.3em;
+    margin: -1.9rem -1.5rem 1rem -1.5rem;
+    border-radius: 8px 8px 0 0;
+}
+
+.about img {
+    float: right;
+    width: 180px;
+    margin: 0 0 1em 1em;
+    border-radius: 8px;
+}
+
+.resources ul {
+    list-style-type: disc;
+    padding-left: 1.5em;
+}
+
+.resources a {
+    text-decoration: none;
+    color: #003366;
+}
+
+.resources a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+footer #lastModified {
+    color: #ffcc00;
+    margin-top: 0.1em;
+}
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    .about img {
+        float: none;
+        display: block;
+        margin: 1em auto;
+    }
+}
