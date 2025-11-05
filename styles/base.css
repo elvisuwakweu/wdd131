@@ -4,7 +4,7 @@ body {
     padding: 0;
     background-color: #f4f4f9;
     color: #333;
-    line-height: 2.1rem;
+    line-height: 2.0rem;
 }
 
 * {
@@ -21,9 +21,9 @@ header {
 }
 
 header h1 {
-    font-weight: 600;
+    font-weight: 600px;
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     padding: 1.0rem;
 }
 
@@ -43,7 +43,7 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 600px;
     transition: color 0.3s ease;
 }
 
@@ -70,7 +70,7 @@ main {
 
 .card {
     background-color: white;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     border-radius: 8px;
     padding: 1.5em;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
@@ -80,14 +80,50 @@ main {
     background-color: #003366;
     color: white;
     padding: 0.3em;
-    margin: -1.9rem -1.5rem 1rem -1.5rem;
+    margin: -1.9rem -1.6rem 1rem -1.6rem;
     border-radius: 8px 8px 0 0;
+}
+
+.location h3 {
+    margin-top: 1rem;
+    margin-bottom: 0.4rem;
+    color: #003366;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 0.1rem;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.flag {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin: 1rem 1em 1em;
+}
+
+.flag figure {
+    margin: 0;
+}
+
+.flag img {
+    width: 150px;
+    border: 1px solid #0e0c0c;
+    border-radius: 4px;
+}
+
+.flag figcaption {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #555;
+    text-align: center;
+    margin-top: 0.3rem;
 }
 
 .about img {
     float: right;
-    width: 180px;
-    margin: 0 0 1em 1em;
+    width: 150px;
+    margin: 2em 0 1em 1em;
     border-radius: 8px;
 }
 
@@ -126,6 +162,6 @@ footer #lastModified {
     .about img {
         float: none;
         display: block;
-        margin: 1em auto;
+        margin: 6em auto;
     }
 }
