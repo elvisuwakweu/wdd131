@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 – Dynamic Web Fundamentals Temple Album – Elvis Uchenna Uwakwe</title>
+    <meta name="description" content="A responsive temple album showcasing temples around the world.">
+    <meta name="author" content="Elvis Uchenna Uwakwe">
+
+    <!-- ====== Google Fonts ====== -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/temples.css">
+    <link rel="stylesheet" href="styles/temples-large.css">
+    <script src="scripts/temples.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Temple Album</h1>
+
+        <button id="hamburger" aria-label="Toggle navigation menu">☰</button>
+        <nav id="main-nav">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="old.html">Old</a></li>
+                <li><a href="new.html">New</a></li>
+                <li><a href="large.html">Large</a></li>
+                <li><a href="small.html">Small</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Home</h2>
+        <div class="temple-grid">
+            <figure>
+                <img src="https://www.churchofjesuschrist.org/imgs/c6b3cf4bce3e1adb39d332032cb27b2705fe5719/full/3840%2C/0/default?download=true"
+                    alt="Aba Nigeria Temple">
+                <figcaption>Aba Nigeria Temple</figcaption>
+            </figure>
+
+            <figure>
+                <img src="https://www.churchofjesuschrist.org/imgs/fac2f821c9895e1acd1325cbdb3fa447c4bb4e19/full/3840%2C/0/default?download=true"
+                    alt="Accra Ghana Temple">
+                <figcaption>Accra Ghana Temple</figcaption>
+            </figure>
+
+            <figure>
+                <img src="https://www.churchofjesuschrist.org/imgs/91e85c77c80c2183fc42fdf16b84bf75ad34f4c5/full/3840%2C/0/default?download=true"
+                    alt="Albuquerque New Mexico Temple">
+                <figcaption>Albuquerque New Mexico Temple</figcaption>
+            </figure>
+
+            <figure>
+                <img src="https://www.churchofjesuschrist.org/imgs/32ee7c27ae82d11691a7d95ad36c350935bfdacf/full/3840%2C/0/default?download=true"
+                    alt="Billings Montana Temple">
+                <figcaption>Billings Montana Temple</figcaption>
+            </figure>
+
+            <figure>
+                <img src="https://www.churchofjesuschrist.org/imgs/da7965e5c992e2b4d7e09a59d686b293abcc52af/full/3840%2C/0/default?download=true"
+                    alt="Birmingham Alabama Temple">
+                <figcaption>Birmingham Alabama Temple</figcaption>
+            </figure>
+
+            <figure>
+                <img src="https://www.churchofjesuschrist.org/imgs/7966d14e4b63698bddfbfbf57b6ed9dc1649fb5d/full/1920%2C/0/default?download=true"
+                    alt="Boise Idaho Temple">
+                <figcaption>Boise Idaho Temple</figcaption>
+            </figure>
+
+            <figure>
+                <img src="https://www.churchofjesuschrist.org/imgs/49ce57ffd3ae51ba9b29e6dc5d6b156c79e08dd2/full/1920%2C/0/default?download=true"
+                    alt="Boston Massachusetts Temple">
+                <figcaption>Boston Massachusetts Temple</figcaption>
+            </figure>
+
+            <figure>
+                <img src="https://www.churchofjesuschrist.org/imgs/85c18a672159a97611472221693941edc64399c2/full/1920%2C/0/default?download=true"
+                    alt="Bountiful Utah Temple">
+                <figcaption>Bountiful Utah Temple</figcaption>
+            </figure>
+
+            <figure>
+                <img src="https://www.churchofjesuschrist.org/imgs/d987d547ea75e1556e719efd8cf1a3067cfc40c4/full/3840%2C/0/default?download=true"
+                    alt="Bern Switzerland Temple">
+                <figcaption>Bern Switzerland Temple</figcaption>
+            </figure>
+
+            <figure>
+                <img src="https://www.churchofjesuschrist.org/imgs/8540649d4237393e9b6ae327ab4aac3992f62bd9/full/3840%2C/0/default?download=true" alt="Campinas Brazil Temple">
+                <figcaption>Campinas Brazil Temple</figcaption>
+            </figure>
+
+            <figure>
+                <img src="https://churchofjesuschrist.org/imgs/fb93a7e38ae87f8d3651c9122531824cb4aba92b/full/1920%2C/0/default?download=true" alt="Denver Colorado Temple">
+                <figcaption>Denver Colorado Temple</figcaption>
+            </figure>
+
+            <figure>
+                <img src="https://www.churchofjesuschrist.org/imgs/7a66995069da049701afff92cdcd013e77a0bf0e/full/3840%2C/0/default?download=true" alt="Fort Lauderdale Florida Temple">
+                <figcaption>Fort Lauderdale Florida Temple</figcaption>
+            </figure>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> 🌍 Elvis Uchenna Uwakwe 🌍 | My Temple Album</p>
+        <p>Last Modified: <span id="last-modified"></span></p>
+    </footer>
+</body>
+
+</html>
