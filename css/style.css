@@ -1,3 +1,6 @@
+/* =====================
+   Variables
+===================== */
 :root {
     --primary: #036308;
     --accent: #5ff4b6;
@@ -9,6 +12,9 @@
     --text: #222;
 }
 
+/* =====================
+   Global Styles
+===================== */
 * {
     box-sizing: border-box;
 }
@@ -21,6 +27,9 @@ body {
     line-height: 1.4;
 }
 
+/* =====================
+   Page Title
+===================== */
 .page-title {
     background: var(--primary);
     color: #fff;
@@ -32,19 +41,12 @@ body {
     margin: 0;
     font-size: 2.4rem;
     font-weight: 700;
-    position: relative;
 }
 
 .page-title h1::after {
     content: " 😊";
     margin-left: 0.3rem;
     font-size: 1.1rem;
-}
-
-@media (max-width: 700px) {
-    .page-title h1::after {
-        content: "";
-    }
 }
 
 .subtitle {
@@ -57,6 +59,9 @@ body {
     background: var(--accent);
 }
 
+/* =====================
+   Hero Section
+===================== */
 .hero {
     position: relative;
 }
@@ -67,11 +72,11 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    background: rgba(0, 0, 0, 0.35);
     padding: 0.6rem 1rem;
-    border-radius: 6px;
     font-size: 1.2rem;
     z-index: 10;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 6px;
 }
 
 .hero img {
@@ -80,35 +85,48 @@ body {
     object-fit: cover;
 }
 
+/* =====================
+   Floating Cards
+===================== */
 .floating-info {
     display: flex;
     justify-content: center;
     gap: 5rem;
     max-width: var(--max-width);
-    margin: -150px auto 2rem;
-    flex-wrap: wrap;
+    margin: -150px auto -1rem;
     padding: 0 1rem;
+    flex-wrap: wrap;
 }
 
 .info-card {
     background: var(--card-bg);
     backdrop-filter: blur(0.1px);
     padding: 1.2rem;
+    border-radius: 0;
     width: 40%;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
 }
 
 .info-card h3 {
     background: var(--accent);
+    margin: 0 0 1rem 0;
     padding: 0.6rem;
     color: #fff;
-    margin-top: 0;
 }
 
+.info-card ul {
+    padding-left: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+.info-card p {
+    margin: 0.4rem 0;
+}
+
+/* Weather icons */
 .weather-icon-desktop {
     display: block;
-    width: 40px;
+    width: 48px;
     height: auto;
     margin-bottom: 0.5rem;
 }
@@ -117,28 +135,37 @@ body {
     display: none;
 }
 
+/* Weather heading emoticon */
 #weather-heading::after {
     content: " ⛅";
+    margin-left: 0.3rem;
 }
 
-/* MEDIA QUERIES */
+/* =====================
+   Media Queries
+===================== */
 @media (max-width: 700px) {
+    .page-title h1::after {
+        content: "";
+    }
+
     .floating-info {
         flex-direction: column;
+        margin-top: 1rem;
         gap: 1rem;
-        margin: 1rem auto;
     }
 
     .info-card {
         width: 100%;
     }
 
-    .weather-icon-desktop {
-        display: none;
-    }
-
     .weather-icon-mobile {
         display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    .weather-icon-desktop {
+        display: none;
     }
 
     #weather-heading::after {
@@ -146,6 +173,9 @@ body {
     }
 }
 
+/* =====================
+   Main Cards
+===================== */
 .card {
     border-radius: var(--radius);
     padding: 1rem;
@@ -153,6 +183,9 @@ body {
     background: var(--card-bg);
 }
 
+/* =====================
+   Footer
+===================== */
 footer {
     background: var(--primary);
     color: #fff;
