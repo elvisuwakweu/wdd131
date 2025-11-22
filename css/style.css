@@ -9,6 +9,21 @@
     --text: #222;
 }
 
+.page-title h1::after {
+    content: " 😊";
+    margin-left: .3rem;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 700px) {
+    .floating-info {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin: -10px auto 1rem;
+        padding: 0 1rem;
+    }
+}
+
 * {
     box-sizing: border-box
 }

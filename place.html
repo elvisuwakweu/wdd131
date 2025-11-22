@@ -4,6 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Explore Nigeria: vibrant culture, history, and beautiful landscapes.">
+    <meta name="author" content="Elvis Uchenna Uwakwe">
+
     <title>Nigeria | Country Page</title>
     <link rel="stylesheet" href="CSS/style.css">
     <script src="JS/main.js" defer></script>
@@ -20,14 +23,14 @@
     <section class="hero" aria-labelledby="hero-heading">
         <h2 id="hero-heading" class="hero-title">Nigeria – Land of Beauty</h2>
        
-        <picture>
-    <!-- large desktop -->
-<source type="images/webp" media="(min-width:1000px)" srcset="images/hero-large.webp 1200w" sizes="100vw">
-    <!-- tablet -->
-    <source type="images/webp" media="(min-width:600px)" srcset="images/hero-medium.webp 800w" sizes="100vw">
-    <!-- fallback (mobile) -->
-            <img src="images/hero-small.webp" alt="Landscape in Nigeria" class="hero-img">
-        </picture>
+    <picture>
+        <source srcset="images/hero-large.webp 1200w" sizes="(min-width:1000px) 1200px, 100vw" media="(min-width:1000px)"
+            type="images/webp">
+        <source srcset="images/hero-medium.webp 800w" sizes="(min-width:600px) 800px, 100vw" media="(min-width:600px)"
+            type="images/webp">
+        <img src="images/hero-small.webp" alt="Landscape in Nigeria" class="hero-img">
+    </picture>
+
     </section>
  
 
