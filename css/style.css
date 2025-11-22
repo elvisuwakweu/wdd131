@@ -21,7 +21,6 @@ body {
     line-height: 1.4;
 }
 
-/* PAGE TITLE */
 .page-title {
     background: var(--primary);
     color: #fff;
@@ -33,6 +32,7 @@ body {
     margin: 0;
     font-size: 2.4rem;
     font-weight: 700;
+    position: relative;
 }
 
 .page-title h1::after {
@@ -47,19 +47,16 @@ body {
     }
 }
 
-/* Subtitle */
 .subtitle {
     margin: 0.3rem 0 0;
     opacity: 0.95;
 }
 
-/* Accent bar */
 .title-accent {
     height: 4px;
     background: var(--accent);
 }
 
-/* HERO SECTION */
 .hero {
     position: relative;
 }
@@ -70,11 +67,11 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+    background: rgba(0, 0, 0, 0.35);
     padding: 0.6rem 1rem;
+    border-radius: 6px;
     font-size: 1.2rem;
     z-index: 10;
-    background: rgba(0, 0, 0, 0.35);
-    border-radius: 6px;
 }
 
 .hero img {
@@ -83,37 +80,35 @@ body {
     object-fit: cover;
 }
 
-/* FLOATING INFO CARDS */
 .floating-info {
     display: flex;
     justify-content: center;
     gap: 5rem;
     max-width: var(--max-width);
-    margin: -150px auto -1rem;
-    padding: 0 1rem;
+    margin: -150px auto 2rem;
     flex-wrap: wrap;
+    padding: 0 1rem;
 }
 
 .info-card {
     background: var(--card-bg);
     backdrop-filter: blur(0.1px);
     padding: 1.2rem;
-    border-radius: var(--radius);
     width: 40%;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
 }
 
 .info-card h3 {
     background: var(--accent);
     padding: 0.6rem;
     color: #fff;
-    margin: 0 0 1rem 0;
-    border-radius: 6px;
+    margin-top: 0;
 }
 
-/* Weather icons */
 .weather-icon-desktop {
-    width: 48px;
+    display: block;
+    width: 40px;
     height: auto;
     margin-bottom: 0.5rem;
 }
@@ -130,21 +125,20 @@ body {
 @media (max-width: 700px) {
     .floating-info {
         flex-direction: column;
-        margin-top: 1rem;
         gap: 1rem;
+        margin: 1rem auto;
     }
 
     .info-card {
         width: 100%;
     }
 
-    .weather-icon-mobile {
-        display: block;
-        margin-bottom: 0.5rem;
-    }
-
     .weather-icon-desktop {
         display: none;
+    }
+
+    .weather-icon-mobile {
+        display: block;
     }
 
     #weather-heading::after {
@@ -152,7 +146,6 @@ body {
     }
 }
 
-/* MAIN CARDS */
 .card {
     border-radius: var(--radius);
     padding: 1rem;
@@ -160,7 +153,6 @@ body {
     background: var(--card-bg);
 }
 
-/* FOOTER */
 footer {
     background: var(--primary);
     color: #fff;

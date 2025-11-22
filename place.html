@@ -13,27 +13,27 @@
 </head>
 
 <body>
-    <!-- PAGE TITLE -->
+
     <header class="page-title">
         <h1>Nigeria</h1>
         <p class="subtitle">Vibrant culture, nature, and history.</p>
     </header>
     <div class="title-accent" aria-hidden="true"></div>
 
-    <!-- HERO SECTION -->
     <section class="hero" aria-labelledby="hero-heading">
         <h2 id="hero-heading" class="hero-title">Nigeria – Land of Beauty</h2>
+
         <picture>
-            <source srcset="images/hero-large.webp 1200w" sizes="100vw" media="(min-width:1000px)" type="images/webp">
-            <source srcset="images/hero-medium.webp 800w" sizes="100vw" media="(min-width:600px)" type="images/webp">
-            <img src="images/hero-small.webp" alt="A scenic view of Nigeria representing the country landscape">
+            <source srcset="images/hero-large.webp 1200w" sizes="(min-width:1000px) 1200px, 100vw"
+                media="(min-width:1000px)" type="images/webp">
+            <source srcset="images/hero-medium.webp 800w" sizes="(min-width:600px) 800px, 100vw"
+                media="(min-width:600px)" type="images/webp">
+            <img src="images/hero-small.webp" alt="A scenic view of Nigeria with greenery and hills">
         </picture>
     </section>
 
-    <!-- FLOATING INFO CARDS -->
     <section class="floating-info" aria-label="Quick facts and weather">
 
-        <!-- ABOUT CARD -->
         <article class="info-card" aria-labelledby="about-heading">
             <h3 id="about-heading">About Nigeria</h3>
             <ul>
@@ -48,14 +48,11 @@
             </ul>
         </article>
 
-        <!-- WEATHER CARD -->
         <article class="info-card" aria-labelledby="weather-heading">
             <h3 id="weather-heading">Weather</h3>
 
-            <!-- Desktop icon -->
             <img src="images/weather.svg" alt="Weather Icon" class="weather-icon-desktop">
 
-            <!-- Mobile inline SVG -->
             <svg class="weather-icon-mobile" width="48" height="48" viewBox="0 0 24 24" aria-hidden="true">
                 <g>
                     <path d="M6.5 10a4 4 0 1 1 7.9 1H6.5z" fill="none" stroke="currentColor" stroke-width="1.2" />
@@ -72,7 +69,6 @@
 
     </section>
 
-    <!-- MAIN CONTENT -->
     <main>
         <section class="card" aria-labelledby="sights-heading">
             <h2 id="sights-heading">Top Sights</h2>
@@ -84,12 +80,12 @@
         </section>
     </main>
 
-    <!-- FOOTER -->
     <footer>
         <p>&copy; <span id="year"></span> 🌍 Elvis Uchenna Uwakwe 🌍 Ebonyi State, Nigeria | Last Modified:
             <span id="lastModified"></span>
         </p>
     </footer>
+
 </body>
 
 </html>
