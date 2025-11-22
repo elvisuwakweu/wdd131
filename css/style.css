@@ -2,30 +2,15 @@
     --primary: #036308;
     --accent: #5ff4b6;
     --bg-light: #e8f7e8;
-    --card-bg: #fff;
+    --card-bg: rgba(255, 255, 255, 0.6);
     --max-width: 1100px;
     --space: 1rem;
     --radius: 12px;
     --text: #222;
 }
 
-.page-title h1::after {
-    content: " 😊";
-    margin-left: .3rem;
-    font-size: 1.1rem;
-}
-
-@media (max-width: 700px) {
-    .floating-info {
-        flex-direction: column;
-        gap: 1.5rem;
-        margin: -10px auto 1rem;
-        padding: 0 1rem;
-    }
-}
-
 * {
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 body {
@@ -36,7 +21,6 @@ body {
     line-height: 1.4;
 }
 
-/* Page title (full width) */
 .page-title {
     background: var(--primary);
     color: #fff;
@@ -50,10 +34,21 @@ body {
     font-weight: 700;
 }
 
+.page-title h1::after {
+    content: " 😊";
+    margin-left: 0.3rem;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 700px) {
+    .page-title h1::after {
+        content: "";
+    }
+}
+
 .subtitle {
-    margin: 0.3rem 0 0 0;
+    margin: 0.3rem 0 0;
     opacity: 0.95;
-    font-size: 1rem;
 }
 
 .title-accent {
@@ -67,155 +62,97 @@ body {
 
 .hero-title {
     position: absolute;
-    top: 2%;
-    left: 12%;
+    top: 10%;
+    left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    padding: .6rem 1rem;
-    font-size: 1.5rem;
+    padding: 0.6rem 1rem;
+    font-size: 1.2rem;
     z-index: 10;
-}
-
-@media (max-width: 600px) {
-    .hero-title {
-        font-size: 1.4rem;
-        padding: 0.4rem 0.6rem;
-    }
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 6px;
 }
 
 .hero img {
     width: 100%;
     height: auto;
-    display: block;
     object-fit: cover;
 }
 
 .floating-info {
     display: flex;
-    flex-direction: row;
-    /* stack vertically */
-    gap: 30rem;
-    /* vertical spacing */
+    justify-content: center;
+    gap: 5rem;
     max-width: var(--max-width);
-    margin: -420px auto 9rem;
-    padding: 0 2rem;
+    margin: -150px auto -1rem;
+    padding: 0 1rem;
+    flex-wrap: wrap;
 }
 
 .info-card {
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(1px);
-    border-radius: 0px;
-    padding: 1.1rem;
-    width: 48%;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-    position: relative;
-    z-index: 10;
+    background: var(--card-bg);
+    backdrop-filter: blur(0.1px);
+    padding: 1.2rem;
+    border-radius: 0;
+    width: 40%;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
 .info-card h3 {
-    margin: -9px 5rem 0.1rem -2rem;
-    backdrop-filter: blur(1px);
-    padding: 0.5rem 0.5rem;
     background: var(--accent);
+    margin: 0.1rem 15rem 1rem -2rem;
+    padding: 0.6rem;
     color: #fff;
-    border-radius: 0px;
-    font-size: 1.1rem;
 }
 
-.about-section {
-    margin-bottom: 2rem;
+.weather-icon-desktop {
+    width: 5px;
+    margin-bottom: 0.5rem;
 }
 
-.info-card ul {
-    margin: 0;
-    padding-left: 2rem;
-}
-
-.info-card p {
-    margin: .4rem 0;
-}
-
-.info-card.weather {
-    margin-top: 2rem;
-}
-
-.floating-info .info-card:first-child {
-    position: relative;
-    top: -150px;
-    right: 4em;
-    margin-bottom: 5rem;
-}
-
-.floating-info .info-card:last-child {
-    position: relative;
-    top: 40px;
-    left: 4em;
-    margin-bottom: 9rem;
-}
-
-.floating-info .info-card {
-    z-index: 10;
-}
-
-.section-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    /* Space between child sections */
-}
-
-/* Small inline weather icon — mobile only (visible) */
 .weather-icon-mobile {
-    display: block;
-    margin-bottom: .5rem;
+    display: none;
 }
 
-/* Regular page card */
-.card {
-    border-radius: var(--radius);
-    padding: 0rem;
-    margin: -5rem 1rem -1rem 1rem;
+#weather-heading::after {
+    content: " ⛅";
 }
 
-/* Footer */
-footer {
-    background: var(--primary);
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-}
+@media (max-width: 700px) {
 
-/* Pseudo-element emoticon on wider screens only (criterion 7) */
-.page-title h1::after {
-    content: " 😊";
-    margin-left: .3rem;
-    font-size: 1.1rem;
-}
-
-@media (max-width:700px) {
-    .page-title h1::after {
-        content: "";
-    }
-
-    /* hide on mobile */
-}
-
-@media (min-width:700px) {
-    .weather-icon-mobile {
-        display: none;
-    }
-}
-
-@media (max-width:700px) {
     .floating-info {
         flex-direction: column;
-        margin: -10px auto 1rem;
-        gap: 1rem;
-        padding: 0 1rem;
+        margin-top: 1rem;
     }
 
     .info-card {
         width: 100%;
     }
+
+    .weather-icon-mobile {
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    .weather-icon-desktop {
+        display: none;
+    }
+
+    #weather-heading::after {
+        content: "";
+    }
+}
+
+.card {
+    border-radius: var(--radius);
+    padding: 1rem;
+    margin: 2rem 1rem;
+    background: var(--card-bg);
+}
+
+footer {
+    background: var(--primary);
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
 }
