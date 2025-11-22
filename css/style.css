@@ -40,12 +40,6 @@ body {
     font-size: 1.1rem;
 }
 
-@media (max-width: 700px) {
-    .page-title h1::after {
-        content: "";
-    }
-}
-
 .subtitle {
     margin: 0.3rem 0 0;
     opacity: 0.95;
@@ -84,30 +78,29 @@ body {
     justify-content: center;
     gap: 5rem;
     max-width: var(--max-width);
-    margin: -150px auto 2rem;
-    flex-wrap: wrap;
+    margin: -150px auto -1rem;
     padding: 0 1rem;
+    flex-wrap: wrap;
 }
 
 .info-card {
     background: var(--card-bg);
-    backdrop-filter: blur(1px);
-    padding: 1.2rem;
-    border-radius: var(--radius);
+    backdrop-filter: blur(0.1px);
+    padding: 1rem;
+    border-radius: 0;
     width: 40%;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
 .info-card h3 {
-    background: var(--accent);
+background: var(--accent);
+    margin: 0.1rem 15rem 1rem -2rem;
     padding: 0.6rem;
     color: #fff;
-    margin: 0 0 1rem 0;
 }
 
 .weather-icon-desktop {
     width: 48px;
-    height: 48px;
     margin-bottom: 0.5rem;
 }
 
@@ -123,20 +116,18 @@ body {
     .floating-info {
         flex-direction: column;
         margin-top: 1rem;
-        gap: 1rem;
     }
 
     .info-card {
         width: 100%;
     }
 
-    .weather-icon-desktop {
-        display: none;
-    }
-
     .weather-icon-mobile {
         display: block;
-        margin-bottom: 0.5rem;
+    }
+
+    .weather-icon-desktop {
+        display: none;
     }
 
     #weather-heading::after {
@@ -144,7 +135,6 @@ body {
     }
 }
 
-/* Main card */
 .card {
     border-radius: var(--radius);
     padding: 1rem;
