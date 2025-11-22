@@ -21,6 +21,7 @@ body {
     line-height: 1.4;
 }
 
+/* PAGE TITLE */
 .page-title {
     background: var(--primary);
     color: #fff;
@@ -46,16 +47,19 @@ body {
     }
 }
 
+/* Subtitle */
 .subtitle {
     margin: 0.3rem 0 0;
     opacity: 0.95;
 }
 
+/* Accent bar */
 .title-accent {
     height: 4px;
     background: var(--accent);
 }
 
+/* HERO SECTION */
 .hero {
     position: relative;
 }
@@ -79,6 +83,7 @@ body {
     object-fit: cover;
 }
 
+/* FLOATING INFO CARDS */
 .floating-info {
     display: flex;
     justify-content: center;
@@ -93,20 +98,23 @@ body {
     background: var(--card-bg);
     backdrop-filter: blur(0.1px);
     padding: 1.2rem;
-    border-radius: 0;
+    border-radius: var(--radius);
     width: 40%;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
 .info-card h3 {
     background: var(--accent);
-    margin: 0.1rem 15rem 1rem -2rem;
     padding: 0.6rem;
     color: #fff;
+    margin: 0 0 1rem 0;
+    border-radius: 6px;
 }
 
+/* Weather icons */
 .weather-icon-desktop {
-    width: 5px;
+    width: 48px;
+    height: auto;
     margin-bottom: 0.5rem;
 }
 
@@ -118,11 +126,12 @@ body {
     content: " ⛅";
 }
 
+/* MEDIA QUERIES */
 @media (max-width: 700px) {
-
     .floating-info {
         flex-direction: column;
         margin-top: 1rem;
+        gap: 1rem;
     }
 
     .info-card {
@@ -143,6 +152,7 @@ body {
     }
 }
 
+/* MAIN CARDS */
 .card {
     border-radius: var(--radius);
     padding: 1rem;
@@ -150,6 +160,7 @@ body {
     background: var(--card-bg);
 }
 
+/* FOOTER */
 footer {
     background: var(--primary);
     color: #fff;
