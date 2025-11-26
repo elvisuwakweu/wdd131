@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="Temple Explorer: Explore temples worldwide, their history, locations, and images.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple Explorer - Site Plan</title>
+
+    <link rel="stylesheet" href="style/siteplan.css">
+    <script src="js/siteplan.js"></script>
+
+        <style>
+        :root {
+            --primary-color: #003366;
+            --secondary-color: #ECF0F1;
+            --accent-color: #E67E22;
+            /* highlights */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 10px;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        h1 {
+            color: var(--secondary-color);
+        }
+
+        h2 {
+            color: var(--primary-color);
+        }
+
+        .accent {
+            color: var(--accent-color);
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        .wireframe {
+            border: 1px dashed var(--primary-color);
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Temple Explorer</h1>
+        <h1>Presented by Elvis Uchenna Uwakwe</h1>
+    </header>
+
+    <main>
+        <section id="site-name">
+            <h2>Site Name</h2>
+            <p><strong>Temple Explorer</strong></p>
+            <p>This site name represents a project focused on temples worldwide, highlighting their history, location,
+                and images.</p>
+            <p>Optional domain: <span class="accent">templeexplorer.org</span></p>
+        </section>
+
+        <!-- Site Purpose -->
+        <section id="site-purpose">
+            <h2>Site Purpose</h2>
+            <p>The website provides a hub for learning about temples globally, including images, dedication dates,
+                locations, and historical information for educational purposes.</p>
+        </section>
+
+        <!-- Scenarios -->
+        <section id="scenarios">
+            <h2>Scenarios</h2>
+            <ul>
+                <li>Where can I see images and history of the Tokyo Japan Temple?</li>
+                <li>Which temples are located in the United States and when were they dedicated?</li>
+            </ul>
+        </section>
+
+        <!-- Color Schema -->
+        <section id="color-schema">
+            <h2>Color Schema</h2>
+            <ul>
+                <li><strong>Dark Blue (#2C3E50):</strong> headings and main text</li>
+                <li><strong>Light Gray (#ECF0F1):</strong> background</li>
+                <li><strong>Orange (#E67E22):</strong> accents and highlights</li>
+            </ul>
+        </section>
+
+        <!-- Typography -->
+        <section id="typography">
+            <h2>Typography</h2>
+            <ul>
+                <li><strong>Arial:</strong> body text</li>
+                <li><strong>Georgia:</strong> headings</li>
+            </ul>
+        </section>
+
+        <!-- Wireframes -->
+        <section id="wireframes">
+            <h2>Wireframes</h2>
+        
+            <figure class="wireframe-figure">
+                <img src="image/wireframe-mobile.jpg" alt="Mobile wireframe showing header, hero, content blocks, and footer"
+                    width="420">
+                <figcaption>Mobile view wireframe</figcaption>
+            </figure>
+        
+            <figure class="wireframe-figure">
+                <img src="image/wireframe-desktop.png"
+                    alt="Desktop wireframe showing header with nav, hero banner, two-column content and image cards"
+                    width="800">
+                <figcaption>Desktop view wireframe</figcaption>
+            </figure>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> 🌍 Elvis Uchenna Uwakwe 🌍 | My Siteplan</p>
+        <p>Last Modified: <span id="last-modified"></span></p>
+    </footer>
+</body>
+
+</html>
