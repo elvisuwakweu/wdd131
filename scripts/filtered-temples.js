@@ -1,3 +1,4 @@
+// Array of Temple Objects
 const temples = [
     {
         templeName: "Aba Nigeria",
@@ -48,42 +49,39 @@ const temples = [
         area: 116642,
         imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
     },
-
-    // ⭐ YOUR THREE NEW TEMPLES ⭐
     {
-        templeName: "Accra Ghana",
-        location: "Accra, Ghana",
-        dedicated: "2004, January, 11",
-        area: 17500,
-        imageUrl: "https://www.churchofjesuschrist.org/imgs/fac2f821c9895e1acd1325cbdb3fa447c4bb4e19/full/3840%2C/0/default?download=true"
+        templeName: "Tokyo Japan",
+        location: "Tokyo, Japan",
+        dedicated: "1980, October, 27",
+        area: 83000,
+        imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/tokyo-japan/400x250/tokyo_japan_temple-baptistry.jpeg"
     },
     {
-        templeName: "Boise Idaho",
-        location: "Boise, Idaho, United States",
-        dedicated: "1984, May, 25",
-        area: 35400,
-        imageUrl: "https://www.churchofjesuschrist.org/imgs/7966d14e4b63698bddfbfbf57b6ed9dc1649fb5d/full/1920%2C/0/default?download=true"
+        templeName: "London England",
+        location: "London, England",
+        dedicated: "1958, September, 7",
+        area: 13000,
+        imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/london-england/400x250/london-england-temple-lds-650241-wallpaper.jpg"
     },
     {
-        templeName: "Fort Lauderdale Florida",
-        location: "Fort Lauderdale, Florida, USA",
-        dedicated: "2014, May, 4",
-        area: 30500,
-        imageUrl: "https://www.churchofjesuschrist.org/imgs/7a66995069da049701afff92cdcd013e77a0bf0e/full/3840%2C/0/default?download=true"
+        templeName: "Salt Lake Utah",
+        location: "Salt Lake City, Utah, United States",
+        dedicated: "1893, April, 6",
+        area: 253000,
+        imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/salt-lake-city-utah/2018/400x250/slctemple7.jpg"
     }
 ];
 
+// Select the container
+const templeGrid = document.getElementById("temple-grid");
 
-// SELECT GRID CONTAINER
-const container = document.getElementById("temple-grid");
+// Function to create temple cards
+function displayTemples(templesArray) {
+    templeGrid.innerHTML = ""; // Clear existing content
 
-
-// FUNCTION: DISPLAY TEMPLES
-function displayTemples(list) {
-    container.innerHTML = "";
-
-    list.forEach(temple => {
+    templesArray.forEach(temple => {
         const card = document.createElement("figure");
+        card.classList.add("temple-card");
 
         card.innerHTML = `
             <img src="${temple.imageUrl}" alt="${temple.templeName}" loading="lazy">
@@ -95,34 +93,84 @@ function displayTemples(list) {
             </figcaption>
         `;
 
-        container.appendChild(card);
+        templeGrid.appendChild(card);
     });
 }
 
-// DEFAULT LOAD
+const grid = document.querySelector('.temple-grid');
+
+// Function to display temples
+function displayTemples(templeArray) {
+    grid.innerHTML = ''; // Clear grid first
+    templeArray.forEach(temple => {
+        const card = document.createElement('figure');
+
+        const img = document.createElement('img');
+        img.src = temple.imageUrl;
+        img.alt = temple.templeName;
+        img.loading = 'lazy';
+
+        const caption = document.createElement('figcaption');
+        caption.textContent = `${temple.templeName} | ${temple.location} | Dedicated: ${temple.dedicated} | Area: ${temple.area} sq ft`;
+
+        card.appendChild(img);
+        card.appendChild(caption);
+
+        grid.appendChild(card);
+    });
+}
+
+// Initial display (all temples)
 displayTemples(temples);
 
-
-// FILTER BUTTONS
-document.getElementById("home").onclick = () => displayTemples(temples);
-
-document.getElementById("old").onclick = () => {
-    displayTemples(temples.filter(t => parseInt(t.dedicated.substring(0, 4)) < 1900));
-};
-
-document.getElementById("new").onclick = () => {
-    displayTemples(temples.filter(t => parseInt(t.dedicated.substring(0, 4)) > 2000));
-};
-
-document.getElementById("large").onclick = () => {
-    displayTemples(temples.filter(t => t.area > 90000));
-};
-
-document.getElementById("small").onclick = () => {
-    displayTemples(temples.filter(t => t.area < 10000));
-};
-
-
-// FOOTER DATES
+// Footer dynamic content
 document.getElementById("year").textContent = new Date().getFullYear();
 document.getElementById("last-modified").textContent = document.lastModified;
+
+// Filter buttons
+const filterLinks = document.querySelectorAll('.nav-links a');
+filterLinks.forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault();
+        const filter = link.dataset.filter;
+
+        let filtered;
+        switch (filter) {
+            case 'old':
+                filtered = temples.filter(t => {
+                    const year = parseInt(t.dedicated.split(',')[0]);
+                    return year < 1900;
+                });
+                break;
+            case 'new':
+                filtered = temples.filter(t => {
+                    const year = parseInt(t.dedicated.split(',')[0]);
+                    return year > 2000;
+                });
+                break;
+            case 'large':
+                filtered = temples.filter(t => t.area > 90000);
+                break;
+            case 'small':
+                filtered = temples.filter(t => t.area < 10000);
+                break;
+            default:
+                filtered = temples;
+        }
+
+        displayTemples(filtered);
+    });
+});
+
+// Footer dynamic content
+document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("last-modified").textContent = document.lastModified;
+
+// Hamburger menu toggle
+const hamburger = document.getElementById("hamburger");
+const nav = document.getElementById("main-nav");
+
+hamburger.addEventListener("click", () => {
+    nav.classList.toggle("open");
+    hamburger.textContent = nav.classList.contains("open") ? "✖" : "☰";
+});

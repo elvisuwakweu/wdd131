@@ -1,68 +1,193 @@
+:root {
+    --bg-color: #fefefe;
+    --primary-color: #003366;
+    --accent-color: #ffcc00;
+    --text-color: #10083b;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     margin: 0;
-    padding: 0;
-    background: #fafafa;
+    line-height: 1.4rem;
 }
 
 header {
-    background: #003366;
+    background-color: var(--primary-color);
     color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 1rem;
-    text-align: center;
+}
+
+header h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+#hamburger {
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+#main-nav {
+    display: none;
+}
+
+#main-nav.open {
+    display: block;
 }
 
 .nav-links {
     list-style: none;
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
     padding: 0;
-    margin-top: 1rem;
+    margin: 1rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.nav-links button {
-    padding: 0.5rem 2rem;
-    border: none;
-    background: #0066cc;
+.nav-links a {
     color: white;
-    border-radius: 6px;
-    cursor: pointer;
+    text-decoration: none;
+    font-weight: 700;
 }
 
-.nav-links button:hover {
-    background: #004c99;
+.nav-links a:hover {
+    color: var(--accent-color);
+    transition: color 0.3s ease;
 }
 
 main {
-    max-width: 1200px;
-    margin: auto;
-    padding: 1rem;
+    max-width: 90%;
+    margin: 1rem auto;
+    text-align: center;
 }
 
 .temple-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4rem;
+    padding: 1rem;
 }
 
-figure {
-    background: rgb(223, 222, 222);
-    padding: 1.5rem;
-    border-radius: 5px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+.temple-grid figure {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
 }
 
-figure img {
+.temple-grid figure:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.temple-grid figure figcaption {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #003366;
+    line-height: 1.2rem;
+}
+
+.temple-card {
+    background-color: #e4e4e4;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.temple-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.temple-card img {
     width: 100%;
-    border-radius: 0px;
+    height: auto;
+}
+
+.temple-grid img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.temple-grid img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.temple-card figcaption {
+    padding: 1rem;
+}
+
+.temple-card h3 {
+    margin: 0.5rem 0;
+    color: #003366;
+}
+
+.temple-card p {
+    margin: 0.2rem 0;
+    font-size: 0.9rem;
+    color: #10083b;
+}
+
+@media (min-width: 700px) {
+    .temple-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+figcaption {
+    margin-top: 0.3rem;
+    font-style: italic;
+    color: var(--primary-color);
 }
 
 footer {
+    background-color: var(--primary-color);
+    color: white;
     text-align: center;
-    color: #fafafa;
     padding: 1rem;
-    background: #003366;
-    margin-top: -1rem;
+    font-size: 0.9rem;
+}
+
+@media (min-width: 700px) {
+    header {
+        justify-content: space-around;
+    }
+
+    #hamburger {
+        display: none;
+    }
+
+    #main-nav {
+        display: block;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .temple-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    main {
+        max-width: 1200px;
+    }
 }

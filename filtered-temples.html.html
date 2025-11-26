@@ -4,39 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Filtered Temple Album: Explore temples worldwide with details, images, and interactive filters for old, new, large, or small temples.">
+    <meta name="description" content="Temple Album: Explore temples around the world, their history, and architecture.">
     <meta name="author" content="Elvis Uchenna Uwakwe">
-    <title>Filtered Temples | WDD 131 – Elvis Uwakwe</title>
+    <title>Temple Album | WDD 131 – Elvis Uchenna Uwakwe</title>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="styles/filtered-temples.css">
 </head>
 
 <body>
     <header>
-        <h1>Temple Gallery</h1>
-        <nav>
+        <h1>Temple Album</h1>
+        <button id="hamburger" aria-label="Toggle navigation menu">☰</button>
+        <nav id="main-nav">
             <ul class="nav-links">
-                <li><button id="home">Home</button></li>
-                <li><button id="old">Old</button></li>
-                <li><button id="new">New</button></li>
-                <li><button id="large">Large</button></li>
-                <li><button id="small">Small</button></li>
+                <li><a href="#" data-filter="home">Home</a></li>
+                <li><a href="#" data-filter="old">Old</a></li>
+                <li><a href="#" data-filter="new">New</a></li>
+                <li><a href="#" data-filter="large">Large</a></li>
+                <li><a href="#" data-filter="small">Small</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h2>Temples</h2>
-        <div class="temple-grid" id="temple-grid"></div>
+        <h2>Temple Album</h2>
+        <div id="temple-grid" class="temple-grid">
+
+            <!-- Temple cards will be dynamically generated here -->
+        </div>
     </main>
 
-<footer>
-    <p>&copy; <span id="year"></span> 🌍 Elvis Uchenna Uwakwe 🌍 Ebonyi State, Nigeria | Last Modified:
-        <span id="lastModified"></span>
-    </p>
-</footer>
+    <footer>
+        <p>&copy; <span id="year"></span> 🌍 Elvis Uchenna Uwakwe 🌍 | My Temple Album</p>
+        <p>Last Modified: <span id="last-modified"></span></p>
+    </footer>
 
-    <script src="scripts/filtered-temples.js"></script>
+    <!-- JS -->
+    <script src="scripts/filtered-temples.js" defer></script>
 </body>
 
 </html>
