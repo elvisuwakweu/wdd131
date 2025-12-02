@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Submitted</title>
+    <link rel="stylesheet" href="styles/form.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Review Submitted</h1>
+    </header>
+
+    <main>
+        <div class="form-card">
+            <h2>Thank you for your review!</h2>
+            <p id="counter"></p>
+            <a href="form.html" class="submit-btn">Submit Another Review</a>
+        </div>
+    </main>
+
+    <script>
+        let count = Number(localStorage.getItem("reviews")) || 0;
+        count++;
+        localStorage.setItem("reviews", count);
+        document.getElementById("counter").textContent = "Total Reviews Submitted: " + count;
+    </script>
+
+</body>
+
+</html>
