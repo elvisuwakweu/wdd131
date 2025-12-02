@@ -2,8 +2,10 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Review submitted confirmation." />
+    <meta name="author" content="Uwakwe Elvis" />
     <title>Review Submitted</title>
     <link rel="stylesheet" href="styles/form.css">
 </head>
@@ -15,20 +17,25 @@
     </header>
 
     <main>
-        <div class="form-card">
+        <section class="form-card thankyou">
             <h2>Thank you for your review!</h2>
-            <p id="counter"></p>
+            <p id="counter">Total Reviews Submitted: 0</p>
             <a href="form.html" class="submit-btn">Submit Another Review</a>
-        </div>
+        </section>
     </main>
 
+    <footer>
+        <p>©2024 🌸 Rubia Magdelena Francesco 🌸<br>Madagascar</p>
+        <p>Last Modification: 02/26/2024 13:56:10</p>
+    </footer>
+
     <script>
+        // increase counter on page load
         let count = Number(localStorage.getItem("reviews")) || 0;
         count++;
         localStorage.setItem("reviews", count);
         document.getElementById("counter").textContent = "Total Reviews Submitted: " + count;
     </script>
-
 </body>
 
 </html>
