@@ -1,3 +1,4 @@
+// Product list
 const products = [
     "Water Purifier",
     "Smart Thermostat",
@@ -10,7 +11,9 @@ const products = [
     "Emergency Lantern"
 ];
 
+// Populate dropdown
 const dropdown = document.getElementById("product");
+
 products.forEach(item => {
     const option = document.createElement("option");
     option.value = item;

@@ -85,16 +85,23 @@ textarea {
     padding: 10px 12px;
     margin-top: 5px;
     font-size: 15px;
-    background: #fff;
+    background: #ffffff;
     border: 1px solid #888;
     border-radius: 6px;
     appearance: none;
-    outline: none;
-    background-image: url("data:image/svg+xml;utf8,<svg fill='%23555' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%23555' height='24' width='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
     background-repeat: no-repeat;
     background-position: right 10px center;
     cursor: pointer;
-    transition: 0.25s ease;
+}
+
+@media (max-width: 600px) {
+
+    header,
+    main,
+    footer {
+        width: 95%;
+    }
 }
 
 .styled-select:hover {
