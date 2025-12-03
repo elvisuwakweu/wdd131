@@ -1,194 +1,129 @@
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+body {
+    background: #e8e8e8;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
-        body {
-            font-family: "Segoe UI", Roboto, Arial, sans-serif;
-            background: #f2f6f4;
-            color: #171035;
-            line-height: 1.4;
-            padding: 18px 12px 40px;
-        }
+main {
+    width: 100%;
+    max-width: 450px;
+    margin: auto;
+}
 
-        /* header */
-        header {
-            background: #003366;
-            color: #fff;
-            text-align: center;
-            padding: 22px 10px;
-            max-width: 420px;
-            margin: 0 auto 16px;
-            border-radius: 3px;
-        }
+h1 {
+    background: #07036a;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin: 0;
+    font-size: 28px;
+}
 
-        header h1 {
-            font-size: 26px;
-            font-weight: 700;
-            letter-spacing: 0.3px;
-        }
+.form-card {
+    background: #d0d0d0;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 1px solid #bfb5bf;
+}
 
-        main {
-            display: flex;
-            justify-content: center;
-            padding: 0 14px;
-        }
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
-        .form-card {
-            width: 100%;
-            max-width: 420px;
-            background: #cfd3d9;
-            padding: 18px;
-            border-radius: 8px;
-            box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.02);
-            margin-bottom: 16px;
-        }
+label {
+    font-weight: bold;
+    font-size: 15px;
+}
 
-        .field-label {
-            display: block;
-            font-weight: 700;
-            margin-top: 10px;
-            margin-bottom: 6px;
-            color: #1f1f1f;
-            font-size: 14px;
-        }
+.sub {
+    display: block;
+    font-size: 13px;
+    font-style: italic;
+    margin-top: 2px;
+}
 
-        .small {
-            font-weight: 400;
-            font-size: 12px;
-            color: #333;
-            margin-left: 6px;
-        }
+.optional {
+    font-size: 13px;
+    font-style: italic;
+    font-weight: normal;
+}
 
-        select,
-        input[type="date"],
-        input[type="text"],
-        textarea {
-            width: 100%;
-            padding: 12px;
-            border-radius: 4px;
-            border: 1px solid #b8b0b8;
-            background: #fff;
-            font-size: 15px;
-            margin-top: 6px;
-        }
+select,
+input[type="date"],
+input[type="text"],
+textarea {
+    width: 94.2%;
+    padding: 12px;
+    font-size: 15px;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+}
 
-        textarea {
-            resize: vertical;
-        }
+textarea {
+    height: 120px;
+}
 
-        .rating-row {
-            display: flex;
-            justify-content: space-between;
-            gap: 6px;
-            margin-top: 2px;
-            margin-bottom: 12px;
-        }
+.rating-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .rating-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            cursor: pointer;
-        }
+.rating-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-        .rating-item input[type="radio"] {
-            display: none;
-        }
+.star {
+    font-size: 20px;
+}
 
-        .rating-item .stars {
-            font-size: 20px;
-            color: #0b0808;
-            transition: color 0.2s ease;
-        }
+input[type="radio"] {
+    margin-top: 5px;
+    width: 20px;
+    height: 20px;
+}
 
-        .rating-item:hover .stars,
-        .rating-item input[type="radio"]:checked + .stars {
-            color: #f5a623;
-        }
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
 
-        .vis-label {
-            position: absolute;
-            left: -9999px;
-        }
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
 
-        .checkbox-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 10px;
-            margin-top: 6px;
-        }
+.submit-btn {
+    font-size: 20px;
+    padding: 12px;
+    background: #413bdc;
+    border: 2px solid #888;
+    cursor: pointer;
+}
 
-        .checkbox-label {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 15px;
-            cursor: pointer;
-        }
+.submit-btn:hover {
+    background: #141496;
+}
 
-        .checkbox-label input[type="checkbox"] {
-            width: 18px;
-            height: 18px;
-            margin: 0;
-            vertical-align: middle;
-        }
+footer {
+    background: #07036a;
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+}
 
-        .checkbox-label input[type="checkbox"]:checked {
-            accent-color: #2a0535;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 13px;
-            margin-top: 25px;
-            font-size: 18px;
-            background: rgb(96, 96, 255);
-            border: 1px solid #444;
-            border-radius: 5px;
-            cursor: pointer;
-            color: white;
-            transition: background 0.25s ease, transform 0.2s ease;
-        }
-
-        .submit-btn:hover {
-            background: rgb(70, 70, 240);
-        }
-
-        .submit-btn:active {
-            transform: scale(0.97);
-        }
-
-        /* footer */
-        footer {
-            background: #003366;
-            color: #fff;
-            text-align: center;
-            padding: 14px 10px;
-            max-width: 420px;
-            margin: 0 auto;
-            border-radius: 3px;
-            margin-top: 10px;
-        }
-
-        footer p {
-            font-size: 13px;
-        }
-
-        /* Responsive tweaks */
-        @media (max-width: 480px) {
-            header,
-            footer,
-            .form-card {
-                max-width: 360px;
-            }
-
-            .stars {
-                font-size: 16px;
-            }
-
-            header h1 {
-                font-size: 22px;
-            }
-        }
+.example-link {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+}
