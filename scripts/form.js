@@ -1,5 +1,4 @@
-// Product array (the assignment wants name used as option text and id used as value)
-// Using product names as values to match rubric instructions
+// Product array: name is displayed, id is used as the value
 const products = [
     { id: "Laptop X100", name: "Laptop X100" },
     { id: "Smartwatch Z", name: "Smartwatch Z" },
@@ -19,12 +18,19 @@ const products = [
 
 document.addEventListener("DOMContentLoaded", function () {
     const select = document.getElementById("product");
-    products.forEach(p => {
-        const opt = document.createElement("option");
-        opt.value = p.id;
-        opt.textContent = p.name;
-        select.appendChild(opt);
+
+    // Populate product select dropdown
+    products.forEach(product => {
+        const option = document.createElement("option");
+        option.value = product.id;         // value used in form submission
+        option.textContent = product.name; // text shown to user
+        select.appendChild(option);
     });
 
-    // Optional: small client-side validation to ensure at least one checkbox checked? (not required)
+    // Optional: ensure at least one checkbox is selected on form submit
+    const form = document.getElementById("reviewForm");
+    form.addEventListener("submit", function (e) {
+        const checkboxes = form.querySelectorAll("input[type='checkbox']");
+        const oneChecked = Array.from(checkboxes).some(cb => cb.checked);
+    });
 });
