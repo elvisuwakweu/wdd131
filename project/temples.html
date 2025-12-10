@@ -4,16 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Temple Explorer for questions or feedback.">
+    <meta name="description" content="Explore temples of The Church of Jesus Christ of Latter-day Saints worldwide.">
     <meta name="author" content="Elvis Uchenna Uwakwe">
-    <title>Contact - Temple Explorer</title>
-
+    <title>Temples - Temple Explorer</title>
     <link rel="stylesheet" href="style/base.css">
-  
 </head>
 
 <body>
-
     <header>
         <h1>Temple Explorer</h1>
         <nav>
@@ -27,56 +24,72 @@
     </header>
 
     <main class="temple-gallery">
+        <h2>Temples Around the World</h2>
         <div class="gallery-grid">
-            <h2>Temples Around the World</h2>
 
-            <div class="gallery-card">
+            <article class="gallery-card">
                 <img src="https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/los-angeles-california/400x250/los-angeles-california-temple-1079458-wallpaper.jpg"
-                    alt="Los Angeles California Temple" data-caption="Los Angeles California Temple (Dedicated 1956)">
+                    alt="Los Angeles California Temple exterior"
+                    data-caption="Los Angeles California Temple (Dedicated 1956)" loading="lazy"
+                    title="Los Angeles Temple">
                 <h3>Los Angeles California Temple</h3>
                 <p>Dedicated in 1956, this iconic temple serves millions in Southern California.</p>
-            </div>
+            </article>
 
-            <div class="gallery-card">
+            <article class="gallery-card">
                 <img src="https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/paris-france/2018/400x250/Paris-Temple02.jpg"
-                    alt="Paris France Temple" data-caption="Paris France Temple (Dedicated 2017)">
+                    alt="Paris France Temple exterior" data-caption="Paris France Temple (Dedicated 2017)"
+                    loading="lazy" title="Paris Temple">
                 <h3>Paris France Temple</h3>
                 <p>A beautifully designed temple serving members across France and Europe.</p>
-            </div>
+            </article>
 
-            <div class="gallery-card">
+            <article class="gallery-card">
                 <img src="https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/salt-lake-city-utah/400x250/salt-lake-temple-37762.jpg"
-                    alt="Salt Lake Temple" data-caption="Salt Lake Temple (Dedicated 1893)">
+                    alt="Salt Lake Temple exterior" data-caption="Salt Lake Temple (Dedicated 1893)" loading="lazy"
+                    title="Salt Lake Temple">
                 <h3>Salt Lake Temple</h3>
-                <p>The most iconic temple and the symbolic center of the Church.</p>
-            </div>
+                <p>The most iconic temple and symbolic center of the Church.</p>
+            </article>
 
-            <div class="gallery-card">
+            <article class="gallery-card">
                 <img src="https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/accra-ghana/320x180/accra-ghana-temple-detail-249022-2400x1200.jpg"
-                    alt="Accra Ghana Temple" data-caption="Accra Ghana Temple (Dedicated 2004)">
+                    alt="Accra Ghana Temple exterior" data-caption="Accra Ghana Temple (Dedicated 2004)" loading="lazy"
+                    title="Accra Ghana Temple">
                 <h3>Accra Ghana Temple</h3>
                 <p>The first temple in West Africa, serving members across many nations.</p>
-            </div>
+            </article>
 
-            <div class="gallery-card">
+            <article class="gallery-card">
                 <img src="https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/johannesburg-south-africa/400x250/johannesburg-south-africa-temple-lds-83166-wallpaper.jpg"
-                    alt="Johannesburg South Africa Temple" data-caption="Johannesburg South Africa Temple (Dedicated 1985)">
+                    alt="Johannesburg South Africa Temple exterior"
+                    data-caption="Johannesburg South Africa Temple (Dedicated 1985)" loading="lazy"
+                    title="Johannesburg Temple">
                 <h3>Johannesburg South Africa Temple</h3>
-                <p>It a beautifully old temple designed to serve members across South Africa.</p>
-            </div>
+                <p>A temple serving members across South Africa since 1985.</p>
+            </article>
+
+            <article class="gallery-card">
+                <img src="https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/manhattan-new-york/400x250/manhattan-temple-lds-246601-wallpaper.jpg"
+                    alt="Manhattan New York Temple exterior" data-caption="Manhattan New York Temple (Dedicated 1985)"
+                    loading="lazy" title="Manhattan New York Temple">
+                <h3>Manhattan New York Temple</h3>
+                <p>This temple serves members in Manhattan New York since 2004.</p>
+            </article>
 
         </div>
-
     </main>
 
-    <div id="lightbox" class="lightbox">
-        <span class="close">&times;</span>
+    <div id="lightbox" class="lightbox" tabindex="-1">
+        <span class="close" role="button" aria-label="Close">&times;</span>
         <img id="lightbox-img" class="lightbox-content" src="placeholder.jpg" alt="Enlarged temple image">
         <div id="caption" class="caption"></div>
     </div>
 
     <footer>
         <p>&copy; 2025 Temple Explorer. All Rights Reserved.</p>
+        <p>References: <a href="https://www.churchofjesuschrist.org/temples/list" target="_blank">Official Temple
+                List</a></p>
     </footer>
 
     <script>
@@ -91,15 +104,20 @@
                 lightbox.style.display = "flex";
                 lightboxImg.src = img.src;
                 captionText.textContent = img.dataset.caption;
+                lightbox.focus();
             });
         });
 
-        closeBtn.addEventListener("click", () => {
-            lightbox.style.display = "none";
+        const closeLightbox = () => lightbox.style.display = "none";
+
+        closeBtn.addEventListener("click", closeLightbox);
+        lightbox.addEventListener("click", e => {
+            if (e.target === lightbox) closeLightbox();
         });
 
-        lightbox.addEventListener("click", e => {
-            if (e.target === lightbox) lightbox.style.display = "none";
+        // Close with Esc key for accessibility
+        document.addEventListener("keydown", e => {
+            if (e.key === "Escape") closeLightbox();
         });
     </script>
 </body>
